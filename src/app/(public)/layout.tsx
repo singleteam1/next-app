@@ -1,18 +1,16 @@
-import { buttonVariants } from '@/components/ui/button'
-import { ROUTES } from '@/lib/routes'
-import { SEO } from '@/lib/seo'
-import { ArrowRight, Code2, KeyRound } from 'lucide-react'
-import Link from 'next/link'
-import { type ReactNode } from 'react'
+import { ArrowRight } from "lucide-react";
+import type { ReactNode } from "react";
+import { UserButton } from "@/components/auth/user-button";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function PublicLayout({ children }: { children: ReactNode }) {
-	return (
-		<div className='relative min-h-screen'>
-			{/* Top Navigation */}
+  return (
+    <div className="relative min-h-screen">
+      {/* Top Navigation */}
       <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
         <div className="page-container flex h-16 items-center justify-between">
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
-						<a
+            <a
               href="#quickstart"
               className="transition-colors hover:text-foreground"
             >
@@ -30,22 +28,10 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
             >
               Architecture
             </a>
-            
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link
-              href={ROUTES.AUTH.LOGIN()}
-              className={buttonVariants({
-                variant: "outline",
-                size: "sm",
-                className:
-                  "hidden sm:inline-flex border-border/80 hover:border-brand/40 hover:text-brand",
-              })}
-            >
-              <KeyRound className="size-3.5 mr-1" />
-              Sign in
-            </Link>
+            <UserButton />
             <a
               href="#quickstart"
               className={buttonVariants({
@@ -61,8 +47,8 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
           </div>
         </div>
       </header>
-			{children}
-			<footer className="mt-20 border-t border-border/70 bg-card/40 py-8 text-center text-xs text-muted-foreground">
+      {children}
+      <footer className="mt-20 border-t border-border/70 bg-card/40 py-8 text-center text-xs text-muted-foreground">
         <div className="page-container flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="flex items-center gap-2">
             <span className="font-display font-semibold text-foreground">
@@ -71,11 +57,9 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
             <span>•</span>
             <span>Quick Start Next.js Template</span>
           </div>
-          <p>
-            Built with Next.js 16, React 19, Tailwind CSS & Biome
-          </p>
+          <p>Built with Next.js 16, React 19, Tailwind CSS & Biome</p>
         </div>
       </footer>
-		</div>
-	)
+    </div>
+  );
 }

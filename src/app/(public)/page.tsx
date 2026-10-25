@@ -2,22 +2,16 @@ import {
   ArrowRight,
   Boxes,
   CheckCircle2,
-  Code2,
   FolderTree,
   GitBranch,
-  KeyRound,
-  Rocket,
   ShieldCheck,
   SlidersHorizontal,
   Sparkles,
-  Terminal,
 } from "lucide-react";
 import type { Metadata } from "next";
-import Link from "next/link";
 
 import { CopyButton } from "@/components/shared/copy-button";
 import { buttonVariants } from "@/components/ui/button";
-import { ROUTES } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Quick Start Next.js Template",
@@ -116,7 +110,6 @@ export default function HomePage() {
       <main className="page-container sm:py-20">
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-between py-20 px-12 text-center bg-brand-soft rounded-3xl">
-
           {/* Heading */}
           <h1 className="mt-6 text-display-2xl font-bold tracking-tight text-foreground sm:leading-[1.1]">
             Build faster with{" "}
@@ -372,7 +365,7 @@ export default function HomePage() {
             ))}
           </div>
         </section>
-      </main>   
+      </main>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { cache } from 'react'
+export {};
 
 // import { getRootQuery } from '@/generated/api'
 
